@@ -16,15 +16,20 @@
       </div>
     </nav>
     <menuIcon @click="toggleMobileNav" class="menu-icon" v-show="mobile" />
-    <transiton name="mobile-nav">
+    
+    <transition name="mobile-nav" >
       <ul class="mobile-nav" v-show="mobileNav">
         <router-link class="link" to="#">Home</router-link>
         <router-link class="link" to="#">Blogs</router-link>
         <router-link class="link" to="#">Create Post</router-link>
         <router-link class="link" to="#">Login/Register</router-link>
+         
       </ul>
-    </transiton>
+     
+    </transition>
+   
   </header>
+ 
   <!-- 36minutes -->
 </template>
 
@@ -51,6 +56,7 @@ export default {
       this.windowWidth = window.innerWidth;
       if (this.windowWidth <= 750) {
         this.mobile = true;
+        
         return;
       }
       this.mobile = false;
@@ -143,23 +149,14 @@ nav {
     color: #fff;
   }
 }
+.mobile-nav-enter-active,
+  .mobile-nav-leave-active {
+    transition: all 1s ease;
+  }
+  .mobile-nav-enter, .mobile-nav-leave-to {
+    transform: translateX(-250px);
+  }
+  
 
-.mobile-nav-enter-active {
-  transition: all 4s ease;
-}
 
-.mobile-nav-leave-active {
-  transition: all 4s ease;
-}
-.mobile-nav-enter {
-  transform: translateX(-250px);
-}
-
-.mobile-nav-enter-to {
-  transform: translateX(0);
-}
-
-.mobile-nav-leave-to {
-  transform: translateX(-250px);
-}
 </style>
