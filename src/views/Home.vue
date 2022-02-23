@@ -27,16 +27,23 @@ export default {
         title: "2nd post title",
         blogHTML:
           "this is a filler blogpost",
-     blogCoverPhoto: "beatiful-stories",
+     blogCoverPhoto: "beautiful-stories",
       },
            {
         title: "3nd post title",
         blogHTML:
-          "this is a filler blogpost",
-     blogCoverPhoto: "beatiful-stories",
+          "this is a filler blogpost2",
+     blogCoverPhoto: "beautiful-stories",
       },
       ],
     };
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.blog-wrapper{
+  display: flex;
+}
+
+</style>
